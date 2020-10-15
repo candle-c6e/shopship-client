@@ -33,6 +33,13 @@ const AuthStyles = styled.div`
     font-weight: 300;
     margin-bottom: 2rem;
   }
+
+  @media (max-width: 500px) {
+    & {
+      height: auto;
+      min-height: auto;
+    }
+  }
 `;
 
 const FormStyles = styled.form`
@@ -91,7 +98,7 @@ const Login = () => {
         body: JSON.stringify(values),
       }
     );
-    const { error, msg, result } = await response.json();
+    const { error, msg } = await response.json();
     if (error) {
       return setErrorMessage(msg);
     }

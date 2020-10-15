@@ -119,6 +119,7 @@ const NavStyles = styled.nav`
       display: none;
     }
   }
+
 `;
 
 const BannerStyles = styled.div`
@@ -126,6 +127,7 @@ const BannerStyles = styled.div`
   width: 100%;
   background: ${__prod__ ? 'url("/shopship/banner.jpg")' : 'url("/banner.jpg")'};
   background-position: center center;
+  background-repeat: no-repeat;
   background-size: 100%;
   object-fit: cover;
   position: relative;
@@ -152,8 +154,18 @@ const BannerStyles = styled.div`
   }
 
   @media (max-width: 700px) {
+    & {
+      height: 20rem;
+    }
+
     p {
-      font-size: 5rem; 
+      font-size: 4rem; 
+    }
+  }
+
+  @media (max-width: 400px) {
+    p {
+      font-size: 2rem; 
     }
   }
 `;

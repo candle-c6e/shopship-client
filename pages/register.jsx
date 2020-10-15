@@ -33,6 +33,13 @@ const AuthStyles = styled.div`
     font-weight: 300;
     margin-bottom: 2rem;
   }
+
+  @media (max-width: 500px) {
+    & {
+      height: auto;
+      min-height: auto;
+    }
+  }
 `;
 
 const FormStyles = styled.form`

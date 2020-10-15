@@ -6,7 +6,7 @@ import { urlServer } from '../constant'
 const ProductWrapperStyles = styled.div`
   display: grid;
   grid-gap: 1.6rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   a {
     display: grid;

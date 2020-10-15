@@ -33,6 +33,12 @@ const FormStyles = styled.form`
     border-radius: 0.5rem;
     cursor: pointer;
   }
+
+  @media (max-width: 700px) {
+    & {
+      padding: 0;
+    }
+  }
 `
 
 const AddProduct = ({ user }) => {
