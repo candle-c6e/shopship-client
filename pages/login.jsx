@@ -102,7 +102,7 @@ const Login = () => {
     if (error) {
       return setErrorMessage(msg);
     }
-    router.push(`${__prod__ ? 'shopship' : '/'}`);
+    router.push(`/`);
   };
 
   return (

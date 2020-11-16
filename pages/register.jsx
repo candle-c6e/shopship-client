@@ -102,7 +102,7 @@ const Register = () => {
       return setErrorMessage(msg);
     }
 
-    router.push("/shopship");
+    router.push("/");
   };
 
   return (
