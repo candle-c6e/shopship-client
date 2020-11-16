@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
 import Layout from '../../components/Layout'
-import { urlClient, urlServer } from '../../constant'
+import { urlServer } from '../../constant'
 
 const FormStyles = styled.form`
   padding: 0 20rem;
@@ -82,7 +82,7 @@ const EditProduct = ({ user, product }) => {
       body: formData
     })
     const { error, result } = await response.json()
-    if (!error) router.push(`${urlClient}`)
+    if (!error) router.push('/')
   }
 
   return (

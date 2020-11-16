@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Link from 'next/link'
 import styled from "styled-components";
 import Layout from "../../components/Layout";
-import { __prod__, urlClient, urlServer } from "../../constant";
+import { __prod__, urlServer } from "../../constant";
 
 const EditProductButton = styled.div`
   width: 100%;
@@ -98,12 +98,12 @@ const Product = ({ user, product }) => {
     );
 
     if (response.status === 401) {
-      router.push(`${urlClient}/login`);
+      router.push(`/login`);
     }
 
     const { error } = await response.json();
     if (!error) {
-      router.push(`${urlClient}/cart`);
+      router.push(`/cart`);
     }
   };
 
@@ -120,7 +120,7 @@ const Product = ({ user, product }) => {
         body: JSON.stringify({ product_id: id })
       })
       await response.json()
-      router.push(`${urlClient}`)
+      router.push(`/`)
     }
   }
 
@@ -130,7 +130,7 @@ const Product = ({ user, product }) => {
         {
           product.length && user ? (
             <EditProductButton>
-              <Link href={`${urlClient}/edit-product/${product[0].slug}`}>
+              <Link href={`/edit-product/${product[0].slug}`}>
                 <a>
                   <button type="button">Edit</button>
                 </a>

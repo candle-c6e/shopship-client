@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import { urlClient } from "../constant";
 
 const AuthStyles = styled.div`
   min-height: 80vh;
@@ -187,7 +186,7 @@ const Register = () => {
             </div>
             <p className="link-page">
               Already have account?{" "}
-              <Link href={`${urlClient}/login`}>
+              <Link href={`/login`}>
                 <a>login</a>
               </Link>
             </p>

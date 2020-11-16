@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
 import Layout from '../components/Layout'
-import { urlClient, urlServer } from '../constant'
+import { urlServer } from '../constant'
 import { useRouter } from 'next/router'
 
 const FormStyles = styled.form`
@@ -72,7 +72,7 @@ const AddProduct = ({ user }) => {
       body: formData
     })
     const { error, result } = await response.json()
-    if (!error) router.push(`${urlClient}/product/${result.slug}`)
+    if (!error) router.push(`/product/${result.slug}`)
   }
 
   return (

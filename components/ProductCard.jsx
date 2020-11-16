@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { useRouter } from "next/router";
-import { __prod__, urlClient, urlServer } from "../constant";
+import { __prod__, urlServer } from "../constant";
 
 const ProductCardStyles = styled.div`
   font-size: 2rem;
@@ -62,7 +62,7 @@ const ProductCard = ({ product }) => {
   const router = useRouter();
 
   const handleClick = (slug) => {
-    router.push(`${urlClient}/product/${slug}`);
+    router.push(`/product/${slug}`);
   };
 
   const addToCart = async (event, productId) => {
@@ -82,12 +82,12 @@ const ProductCard = ({ product }) => {
     );
 
     if (response.status === 401) {
-      router.push(`${urlClient}/login`);
+      router.push(`/login`);
     }
 
     const { error } = await response.json();
     if (!error) {
-      router.push(`${urlClient}/cart`);
+      router.push(`/cart`);
     }
   };
 

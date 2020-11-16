@@ -5,7 +5,7 @@ import { BsSearch } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useRouter } from "next/router";
-import { __prod__, urlClient, urlServer } from "../constant";
+import { __prod__, urlServer } from "../constant";
 
 const NavStyles = styled.nav`
   height: 7rem;
@@ -125,7 +125,7 @@ const NavStyles = styled.nav`
 const BannerStyles = styled.div`
   height: 33rem;
   width: 100%;
-  background: ${__prod__ ? 'url("/shopship/banner.jpg")' : 'url("/banner.jpg")'};
+  background: url("/shopship/banner.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -239,7 +239,7 @@ const Navbar = ({ showBanner = false, user }) => {
 
   const handleClickProduct = (slug) => {
     setProduct(null);
-    router.push(`${urlClient}/product/${slug}`);
+    router.push(`/product/${slug}`);
   };
 
   const logout = async () => {
@@ -251,7 +251,7 @@ const Navbar = ({ showBanner = false, user }) => {
       }
     );
     await response.json();
-    router.push(`${urlClient}`);
+    router.push(``);
   };
 
   return (
@@ -259,12 +259,12 @@ const Navbar = ({ showBanner = false, user }) => {
       <NavStyles>
         <div className="container">
           <ul className="menu">
-            <Link href={`${urlClient}/`}>
+            <Link href={`/`}>
               <a>
                 <li>Home</li>
               </a>
             </Link>
-            <Link href={`${urlClient}/products/1`}>
+            <Link href={`/products/1`}>
               <a>
                 <li>Product</li>
               </a>
@@ -278,14 +278,14 @@ const Navbar = ({ showBanner = false, user }) => {
                 >
                   Logout
                 </li>
-                <Link href={`${urlClient}/add-product`}>
+                <Link href={`/add-product`}>
                   <a>
                     <button style={{ cursor: "pointer", marginLeft: "1.5rem", padding: '1rem' }}>Add Product</button>
                   </a>
                 </Link>
               </>
             ) : (
-                <Link href={`${urlClient}/login`}>
+                <Link href={`/login`}>
                   <a>
                     <li>Login</li>
                   </a>
@@ -319,7 +319,7 @@ const Navbar = ({ showBanner = false, user }) => {
                 : null}
             </div>
           </div>
-          <Link href={`${urlClient}/cart`}>
+          <Link href={`/cart`}>
             <a>
               <div className="cart">
                 <AiOutlineShoppingCart />
@@ -333,12 +333,12 @@ const Navbar = ({ showBanner = false, user }) => {
       </NavStyles>
       <NavMobileStyles style={{ display: isShowMobile ? 'flex' : 'none' }}>
         <ul className="menu">
-          <Link href={`${urlClient}/products/1`}>
+          <Link href={`/products/1`}>
             <a>
               <li>Product</li>
             </a>
           </Link>
-          <Link href={`${urlClient}/cart`}>
+          <Link href={`/cart`}>
             <a>
               <li>Cart</li>
             </a>
@@ -353,7 +353,7 @@ const Navbar = ({ showBanner = false, user }) => {
             </li>
             </>
           ) : (
-              <Link href={`${urlClient}/login`}>
+              <Link href={`/login`}>
                 <a>
                   <li>Login</li>
                 </a>
